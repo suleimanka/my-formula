@@ -1,0 +1,499 @@
+I, [2025-06-16T22:58:32.612127 #3169]  INFO -- Kitchen: -----> Starting Test Kitchen (v3.7.0)
+I, [2025-06-16T22:58:32.836547 #3169]  INFO -- Kitchen: -----> Creating <terraform-ubuntu-2004>...
+I, [2025-06-16T22:58:33.321734 #3169]  INFO -- Kitchen: #0 building with "default" instance using docker driver
+I, [2025-06-16T22:58:33.321969 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:33.322029 #3169]  INFO -- Kitchen: #1 [internal] load build definition from Dockerfile-kitchen20250616-3169-zrvff1
+I, [2025-06-16T22:58:33.322695 #3169]  INFO -- Kitchen: #1 transferring dockerfile: 1.78kB done
+I, [2025-06-16T22:58:33.322781 #3169]  INFO -- Kitchen: #1 DONE 0.0s
+I, [2025-06-16T22:58:33.322825 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:33.322863 #3169]  INFO -- Kitchen: #2 [internal] load metadata for docker.io/library/ubuntu:20.04
+I, [2025-06-16T22:58:34.473177 #3169]  INFO -- Kitchen: #2 DONE 1.3s
+I, [2025-06-16T22:58:34.669784 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.669847 #3169]  INFO -- Kitchen: #3 [internal] load .dockerignore
+I, [2025-06-16T22:58:34.669867 #3169]  INFO -- Kitchen: #3 transferring context: 2B done
+I, [2025-06-16T22:58:34.669878 #3169]  INFO -- Kitchen: #3 DONE 0.0s
+I, [2025-06-16T22:58:34.669888 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.669898 #3169]  INFO -- Kitchen: #4 [ 1/19] FROM docker.io/library/ubuntu:20.04@sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
+I, [2025-06-16T22:58:34.674186 #3169]  INFO -- Kitchen: #4 DONE 0.0s
+I, [2025-06-16T22:58:34.674348 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674383 #3169]  INFO -- Kitchen: #5 [ 7/19] RUN chmod 0750 /etc/sudoers.d
+I, [2025-06-16T22:58:34.674404 #3169]  INFO -- Kitchen: #5 CACHED
+I, [2025-06-16T22:58:34.674423 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674441 #3169]  INFO -- Kitchen: #6 [ 9/19] RUN echo "Defaults !requiretty" >> /etc/sudoers.d/kitchen
+I, [2025-06-16T22:58:34.674460 #3169]  INFO -- Kitchen: #6 CACHED
+I, [2025-06-16T22:58:34.674478 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674498 #3169]  INFO -- Kitchen: #7 [ 8/19] RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/kitchen
+I, [2025-06-16T22:58:34.674521 #3169]  INFO -- Kitchen: #7 CACHED
+I, [2025-06-16T22:58:34.674539 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674558 #3169]  INFO -- Kitchen: #8 [ 5/19] RUN if ! getent passwd kitchen; then                   useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;                 fi
+I, [2025-06-16T22:58:34.674577 #3169]  INFO -- Kitchen: #8 CACHED
+I, [2025-06-16T22:58:34.674596 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674614 #3169]  INFO -- Kitchen: #9 [ 6/19] RUN mkdir -p /etc/sudoers.d
+I, [2025-06-16T22:58:34.674632 #3169]  INFO -- Kitchen: #9 CACHED
+I, [2025-06-16T22:58:34.674649 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674667 #3169]  INFO -- Kitchen: #10 [ 4/19] RUN apt-get install -y sudo openssh-server curl lsb-release
+I, [2025-06-16T22:58:34.674685 #3169]  INFO -- Kitchen: #10 CACHED
+I, [2025-06-16T22:58:34.674699 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674715 #3169]  INFO -- Kitchen: #11 [13/19] RUN touch /home/kitchen/.ssh/authorized_keys
+I, [2025-06-16T22:58:34.674732 #3169]  INFO -- Kitchen: #11 CACHED
+I, [2025-06-16T22:58:34.674757 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674775 #3169]  INFO -- Kitchen: #12 [ 2/19] RUN [ ! -f "/sbin/initctl" ] || dpkg-divert --local --rename --add /sbin/initctl                 && ln -sf /bin/true /sbin/initctl
+I, [2025-06-16T22:58:34.674793 #3169]  INFO -- Kitchen: #12 CACHED
+I, [2025-06-16T22:58:34.674810 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674827 #3169]  INFO -- Kitchen: #13 [14/19] RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+I, [2025-06-16T22:58:34.674859 #3169]  INFO -- Kitchen: #13 CACHED
+I, [2025-06-16T22:58:34.674877 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674894 #3169]  INFO -- Kitchen: #14 [10/19] RUN mkdir -p /home/kitchen/.ssh
+I, [2025-06-16T22:58:34.674908 #3169]  INFO -- Kitchen: #14 CACHED
+I, [2025-06-16T22:58:34.674922 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674952 #3169]  INFO -- Kitchen: #15 [12/19] RUN chmod 0700 /home/kitchen/.ssh
+I, [2025-06-16T22:58:34.674967 #3169]  INFO -- Kitchen: #15 CACHED
+I, [2025-06-16T22:58:34.674981 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.674993 #3169]  INFO -- Kitchen: #16 [ 3/19] RUN apt-get update
+I, [2025-06-16T22:58:34.675006 #3169]  INFO -- Kitchen: #16 CACHED
+I, [2025-06-16T22:58:34.675019 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.675034 #3169]  INFO -- Kitchen: #17 [15/19] RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+I, [2025-06-16T22:58:34.675042 #3169]  INFO -- Kitchen: #17 CACHED
+I, [2025-06-16T22:58:34.675050 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.675058 #3169]  INFO -- Kitchen: #18 [11/19] RUN chown -R kitchen /home/kitchen/.ssh
+I, [2025-06-16T22:58:34.675066 #3169]  INFO -- Kitchen: #18 CACHED
+I, [2025-06-16T22:58:34.675073 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.675081 #3169]  INFO -- Kitchen: #19 [16/19] RUN mkdir -p /run/sshd
+I, [2025-06-16T22:58:34.675088 #3169]  INFO -- Kitchen: #19 CACHED
+I, [2025-06-16T22:58:34.675096 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:34.675103 #3169]  INFO -- Kitchen: #20 [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales
+I, [2025-06-16T22:58:35.340895 #3169]  INFO -- Kitchen: #20 0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+I, [2025-06-16T22:58:35.524517 #3169]  INFO -- Kitchen: #20 0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+I, [2025-06-16T22:58:35.524656 #3169]  INFO -- Kitchen: #20 1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+I, [2025-06-16T22:58:36.059738 #3169]  INFO -- Kitchen: #20 1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+I, [2025-06-16T22:58:36.254548 #3169]  INFO -- Kitchen: #20 1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+I, [2025-06-16T22:58:36.331570 #3169]  INFO -- Kitchen: #20 1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+I, [2025-06-16T22:58:39.946719 #3169]  INFO -- Kitchen: #20 5.428 Fetched 9733 kB in 5s (1993 kB/s)
+I, [2025-06-16T22:58:41.227601 #3169]  INFO -- Kitchen: #20 5.428 Reading package lists...
+I, [2025-06-16T22:58:42.441453 #3169]  INFO -- Kitchen: #20 6.777 Reading package lists...
+I, [2025-06-16T22:58:42.713472 #3169]  INFO -- Kitchen: #20 7.948 Building dependency tree...
+I, [2025-06-16T22:58:42.841632 #3169]  INFO -- Kitchen: #20 8.195 Reading state information...
+I, [2025-06-16T22:58:42.841739 #3169]  INFO -- Kitchen: #20 8.253 E: Unable to locate package  wget
+I, [2025-06-16T22:58:42.841789 #3169]  INFO -- Kitchen: #20 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+I, [2025-06-16T22:58:42.888441 #3169]  INFO -- Kitchen: ------
+I, [2025-06-16T22:58:42.888513 #3169]  INFO -- Kitchen:  > [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales:
+I, [2025-06-16T22:58:42.888538 #3169]  INFO -- Kitchen: 0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+I, [2025-06-16T22:58:42.888558 #3169]  INFO -- Kitchen: 0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+I, [2025-06-16T22:58:42.888573 #3169]  INFO -- Kitchen: 1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+I, [2025-06-16T22:58:42.888591 #3169]  INFO -- Kitchen: 1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+I, [2025-06-16T22:58:42.888610 #3169]  INFO -- Kitchen: 1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+I, [2025-06-16T22:58:42.888639 #3169]  INFO -- Kitchen: 1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+I, [2025-06-16T22:58:42.888658 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:42.888678 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:42.888687 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:42.888698 #3169]  INFO -- Kitchen: 8.253 E: Unable to locate package  wget
+I, [2025-06-16T22:58:42.888707 #3169]  INFO -- Kitchen: ------
+I, [2025-06-16T22:58:42.889427 #3169]  INFO -- Kitchen: 
+I, [2025-06-16T22:58:42.889495 #3169]  INFO -- Kitchen:  [33m2 warnings found (use docker --debug to expand):
+I, [2025-06-16T22:58:42.889535 #3169]  INFO -- Kitchen: [0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 4)
+I, [2025-06-16T22:58:42.889555 #3169]  INFO -- Kitchen:  - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+I, [2025-06-16T22:58:42.890365 #3169]  INFO -- Kitchen: Dockerfile-kitchen20250616-3169-zrvff1:22
+I, [2025-06-16T22:58:42.890501 #3169]  INFO -- Kitchen: --------------------
+I, [2025-06-16T22:58:42.890526 #3169]  INFO -- Kitchen:   20 |                 RUN mkdir -p /run/sshd
+I, [2025-06-16T22:58:42.890544 #3169]  INFO -- Kitchen:   21 |     
+I, [2025-06-16T22:58:42.890559 #3169]  INFO -- Kitchen:   22 | >>> RUN apt-get update && apt-get install -y --no-install-recommends \ wget curl tar mc apt-utils apt-transport-https locales
+I, [2025-06-16T22:58:42.890574 #3169]  INFO -- Kitchen:   23 |     RUN localedef --no-archive -c -i en_US -f UTF-8 en_US.UTF-8
+I, [2025-06-16T22:58:42.890588 #3169]  INFO -- Kitchen:   24 |     
+I, [2025-06-16T22:58:42.890602 #3169]  INFO -- Kitchen: --------------------
+I, [2025-06-16T22:58:42.890620 #3169]  INFO -- Kitchen: ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+E, [2025-06-16T22:58:42.900171 #3169] ERROR -- Kitchen: ------Exception-------
+E, [2025-06-16T22:58:42.900245 #3169] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2025-06-16T22:58:42.900269 #3169] ERROR -- Kitchen: Message: 1 actions failed.
+>>>>>>     Failed to complete #create action: [Expected process to exit with [0], but received '1'
+---- Begin output of docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . ----
+STDOUT: 
+STDERR: #0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile-kitchen20250616-3169-zrvff1
+#1 transferring dockerfile: 1.78kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:20.04
+#2 DONE 1.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/19] FROM docker.io/library/ubuntu:20.04@sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
+#4 DONE 0.0s
+
+#5 [ 7/19] RUN chmod 0750 /etc/sudoers.d
+#5 CACHED
+
+#6 [ 9/19] RUN echo "Defaults !requiretty" >> /etc/sudoers.d/kitchen
+#6 CACHED
+
+#7 [ 8/19] RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/kitchen
+#7 CACHED
+
+#8 [ 5/19] RUN if ! getent passwd kitchen; then                   useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;                 fi
+#8 CACHED
+
+#9 [ 6/19] RUN mkdir -p /etc/sudoers.d
+#9 CACHED
+
+#10 [ 4/19] RUN apt-get install -y sudo openssh-server curl lsb-release
+#10 CACHED
+
+#11 [13/19] RUN touch /home/kitchen/.ssh/authorized_keys
+#11 CACHED
+
+#12 [ 2/19] RUN [ ! -f "/sbin/initctl" ] || dpkg-divert --local --rename --add /sbin/initctl                 && ln -sf /bin/true /sbin/initctl
+#12 CACHED
+
+#13 [14/19] RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+#13 CACHED
+
+#14 [10/19] RUN mkdir -p /home/kitchen/.ssh
+#14 CACHED
+
+#15 [12/19] RUN chmod 0700 /home/kitchen/.ssh
+#15 CACHED
+
+#16 [ 3/19] RUN apt-get update
+#16 CACHED
+
+#17 [15/19] RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+#17 CACHED
+
+#18 [11/19] RUN chown -R kitchen /home/kitchen/.ssh
+#18 CACHED
+
+#19 [16/19] RUN mkdir -p /run/sshd
+#19 CACHED
+
+#20 [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales
+#20 0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+#20 0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+#20 1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+#20 1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+#20 1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+#20 1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+#20 5.428 Fetched 9733 kB in 5s (1993 kB/s)
+#20 5.428 Reading package lists...
+#20 6.777 Reading package lists...
+#20 7.948 Building dependency tree...
+#20 8.195 Reading state information...
+#20 8.253 E: Unable to locate package  wget
+#20 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+------
+ > [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales:
+0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+
+
+
+8.253 E: Unable to locate package  wget
+------
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 4)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+Dockerfile-kitchen20250616-3169-zrvff1:22
+--------------------
+  20 |                 RUN mkdir -p /run/sshd
+  21 |     
+  22 | >>> RUN apt-get update && apt-get install -y --no-install-recommends \ wget curl tar mc apt-utils apt-transport-https locales
+  23 |     RUN localedef --no-archive -c -i en_US -f UTF-8 en_US.UTF-8
+  24 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+---- End output of docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . ----
+Ran docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . returned 1] on terraform-ubuntu-2004
+E, [2025-06-16T22:58:42.900310 #3169] ERROR -- Kitchen: ----------------------
+E, [2025-06-16T22:58:42.900329 #3169] ERROR -- Kitchen: ------Backtrace-------
+E, [2025-06-16T22:58:42.900346 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:181:in `report_errors'
+E, [2025-06-16T22:58:42.900361 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:172:in `run_action'
+E, [2025-06-16T22:58:42.900379 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command/action.rb:35:in `block in call'
+E, [2025-06-16T22:58:42.900399 #3169] ERROR -- Kitchen: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
+E, [2025-06-16T22:58:42.900412 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command/action.rb:33:in `call'
+E, [2025-06-16T22:58:42.900423 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/cli.rb:52:in `perform'
+E, [2025-06-16T22:58:42.900431 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/cli.rb:198:in `block (2 levels) in <class:CLI>'
+E, [2025-06-16T22:58:42.900439 #3169] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/command.rb:28:in `run'
+E, [2025-06-16T22:58:42.900460 #3169] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/invocation.rb:127:in `invoke_command'
+E, [2025-06-16T22:58:42.900475 #3169] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor.rb:538:in `dispatch'
+E, [2025-06-16T22:58:42.900485 #3169] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/base.rb:584:in `start'
+E, [2025-06-16T22:58:42.900495 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/bin/kitchen:11:in `block in <top (required)>'
+E, [2025-06-16T22:58:42.900507 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/errors.rb:183:in `with_friendly_errors'
+E, [2025-06-16T22:58:42.900521 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/bin/kitchen:11:in `<top (required)>'
+E, [2025-06-16T22:58:42.900578 #3169] ERROR -- Kitchen: /usr/local/bin/kitchen:25:in `load'
+E, [2025-06-16T22:58:42.900605 #3169] ERROR -- Kitchen: /usr/local/bin/kitchen:25:in `<main>'
+E, [2025-06-16T22:58:42.900629 #3169] ERROR -- Kitchen: ----End Backtrace-----
+E, [2025-06-16T22:58:42.900644 #3169] ERROR -- Kitchen: -Composite Exception--
+E, [2025-06-16T22:58:42.900659 #3169] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2025-06-16T22:58:42.900673 #3169] ERROR -- Kitchen: Message: Failed to complete #create action: [Expected process to exit with [0], but received '1'
+---- Begin output of docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . ----
+STDOUT: 
+STDERR: #0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile-kitchen20250616-3169-zrvff1
+#1 transferring dockerfile: 1.78kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:20.04
+#2 DONE 1.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/19] FROM docker.io/library/ubuntu:20.04@sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
+#4 DONE 0.0s
+
+#5 [ 7/19] RUN chmod 0750 /etc/sudoers.d
+#5 CACHED
+
+#6 [ 9/19] RUN echo "Defaults !requiretty" >> /etc/sudoers.d/kitchen
+#6 CACHED
+
+#7 [ 8/19] RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/kitchen
+#7 CACHED
+
+#8 [ 5/19] RUN if ! getent passwd kitchen; then                   useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;                 fi
+#8 CACHED
+
+#9 [ 6/19] RUN mkdir -p /etc/sudoers.d
+#9 CACHED
+
+#10 [ 4/19] RUN apt-get install -y sudo openssh-server curl lsb-release
+#10 CACHED
+
+#11 [13/19] RUN touch /home/kitchen/.ssh/authorized_keys
+#11 CACHED
+
+#12 [ 2/19] RUN [ ! -f "/sbin/initctl" ] || dpkg-divert --local --rename --add /sbin/initctl                 && ln -sf /bin/true /sbin/initctl
+#12 CACHED
+
+#13 [14/19] RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+#13 CACHED
+
+#14 [10/19] RUN mkdir -p /home/kitchen/.ssh
+#14 CACHED
+
+#15 [12/19] RUN chmod 0700 /home/kitchen/.ssh
+#15 CACHED
+
+#16 [ 3/19] RUN apt-get update
+#16 CACHED
+
+#17 [15/19] RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+#17 CACHED
+
+#18 [11/19] RUN chown -R kitchen /home/kitchen/.ssh
+#18 CACHED
+
+#19 [16/19] RUN mkdir -p /run/sshd
+#19 CACHED
+
+#20 [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales
+#20 0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+#20 0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+#20 1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+#20 1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+#20 1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+#20 1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+#20 5.428 Fetched 9733 kB in 5s (1993 kB/s)
+#20 5.428 Reading package lists...
+#20 6.777 Reading package lists...
+#20 7.948 Building dependency tree...
+#20 8.195 Reading state information...
+#20 8.253 E: Unable to locate package  wget
+#20 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+------
+ > [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales:
+0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+
+
+
+8.253 E: Unable to locate package  wget
+------
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 4)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+Dockerfile-kitchen20250616-3169-zrvff1:22
+--------------------
+  20 |                 RUN mkdir -p /run/sshd
+  21 |     
+  22 | >>> RUN apt-get update && apt-get install -y --no-install-recommends \ wget curl tar mc apt-utils apt-transport-https locales
+  23 |     RUN localedef --no-archive -c -i en_US -f UTF-8 en_US.UTF-8
+  24 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+---- End output of docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . ----
+Ran docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . returned 1] on terraform-ubuntu-2004
+E, [2025-06-16T22:58:42.900703 #3169] ERROR -- Kitchen: ----------------------
+E, [2025-06-16T22:58:42.900721 #3169] ERROR -- Kitchen: ------Backtrace-------
+E, [2025-06-16T22:58:42.900736 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:57:in `rescue in run_command'
+E, [2025-06-16T22:58:42.900750 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:44:in `run_command'
+E, [2025-06-16T22:58:42.900767 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:38:in `docker_command'
+E, [2025-06-16T22:58:42.900796 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/image_helper.rb:60:in `build_image'
+E, [2025-06-16T22:58:42.900811 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/container/linux.rb:41:in `create'
+E, [2025-06-16T22:58:42.900823 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/driver/docker.rb:125:in `create'
+E, [2025-06-16T22:58:42.900836 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `public_send'
+E, [2025-06-16T22:58:42.900864 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `block in perform_action'
+E, [2025-06-16T22:58:42.900879 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:563:in `synchronize_or_call'
+E, [2025-06-16T22:58:42.900892 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:524:in `block in action'
+E, [2025-06-16T22:58:42.900902 #3169] ERROR -- Kitchen: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
+E, [2025-06-16T22:58:42.900910 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:523:in `action'
+E, [2025-06-16T22:58:42.900923 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `perform_action'
+E, [2025-06-16T22:58:42.900932 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:404:in `create_action'
+E, [2025-06-16T22:58:42.900939 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2025-06-16T22:58:42.900950 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2025-06-16T22:58:42.900957 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2025-06-16T22:58:42.900964 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `each'
+E, [2025-06-16T22:58:42.900972 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2025-06-16T22:58:42.900979 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:139:in `converge'
+E, [2025-06-16T22:58:42.900986 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `public_send'
+E, [2025-06-16T22:58:42.901334 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2025-06-16T22:58:42.901365 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2025-06-16T22:58:42.901378 #3169] ERROR -- Kitchen: ----End Backtrace-----
+E, [2025-06-16T22:58:42.901385 #3169] ERROR -- Kitchen: ---Nested Exception---
+E, [2025-06-16T22:58:42.901396 #3169] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2025-06-16T22:58:42.901408 #3169] ERROR -- Kitchen: Message: Failed to complete #create action: [Expected process to exit with [0], but received '1'
+---- Begin output of docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . ----
+STDOUT: 
+STDERR: #0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile-kitchen20250616-3169-zrvff1
+#1 transferring dockerfile: 1.78kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:20.04
+#2 DONE 1.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/19] FROM docker.io/library/ubuntu:20.04@sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
+#4 DONE 0.0s
+
+#5 [ 7/19] RUN chmod 0750 /etc/sudoers.d
+#5 CACHED
+
+#6 [ 9/19] RUN echo "Defaults !requiretty" >> /etc/sudoers.d/kitchen
+#6 CACHED
+
+#7 [ 8/19] RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/kitchen
+#7 CACHED
+
+#8 [ 5/19] RUN if ! getent passwd kitchen; then                   useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;                 fi
+#8 CACHED
+
+#9 [ 6/19] RUN mkdir -p /etc/sudoers.d
+#9 CACHED
+
+#10 [ 4/19] RUN apt-get install -y sudo openssh-server curl lsb-release
+#10 CACHED
+
+#11 [13/19] RUN touch /home/kitchen/.ssh/authorized_keys
+#11 CACHED
+
+#12 [ 2/19] RUN [ ! -f "/sbin/initctl" ] || dpkg-divert --local --rename --add /sbin/initctl                 && ln -sf /bin/true /sbin/initctl
+#12 CACHED
+
+#13 [14/19] RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+#13 CACHED
+
+#14 [10/19] RUN mkdir -p /home/kitchen/.ssh
+#14 CACHED
+
+#15 [12/19] RUN chmod 0700 /home/kitchen/.ssh
+#15 CACHED
+
+#16 [ 3/19] RUN apt-get update
+#16 CACHED
+
+#17 [15/19] RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+#17 CACHED
+
+#18 [11/19] RUN chown -R kitchen /home/kitchen/.ssh
+#18 CACHED
+
+#19 [16/19] RUN mkdir -p /run/sshd
+#19 CACHED
+
+#20 [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales
+#20 0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+#20 0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+#20 1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+#20 1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+#20 1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+#20 1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+#20 5.428 Fetched 9733 kB in 5s (1993 kB/s)
+#20 5.428 Reading package lists...
+#20 6.777 Reading package lists...
+#20 7.948 Building dependency tree...
+#20 8.195 Reading state information...
+#20 8.253 E: Unable to locate package  wget
+#20 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+------
+ > [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales:
+0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+
+
+
+8.253 E: Unable to locate package  wget
+------
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 4)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+Dockerfile-kitchen20250616-3169-zrvff1:22
+--------------------
+  20 |                 RUN mkdir -p /run/sshd
+  21 |     
+  22 | >>> RUN apt-get update && apt-get install -y --no-install-recommends \ wget curl tar mc apt-utils apt-transport-https locales
+  23 |     RUN localedef --no-archive -c -i en_US -f UTF-8 en_US.UTF-8
+  24 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+---- End output of docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . ----
+Ran docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . returned 1]
+E, [2025-06-16T22:58:42.901431 #3169] ERROR -- Kitchen: ----------------------
+E, [2025-06-16T22:58:42.901446 #3169] ERROR -- Kitchen: ------Backtrace-------
+E, [2025-06-16T22:58:42.901457 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:57:in `rescue in run_command'
+E, [2025-06-16T22:58:42.901467 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:44:in `run_command'
+E, [2025-06-16T22:58:42.901482 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:38:in `docker_command'
+E, [2025-06-16T22:58:42.901496 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/image_helper.rb:60:in `build_image'
+E, [2025-06-16T22:58:42.901509 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/container/linux.rb:41:in `create'
+E, [2025-06-16T22:58:42.901520 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/driver/docker.rb:125:in `create'
+E, [2025-06-16T22:58:42.901536 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `public_send'
+E, [2025-06-16T22:58:42.901549 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `block in perform_action'
+E, [2025-06-16T22:58:42.901560 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:563:in `synchronize_or_call'
+E, [2025-06-16T22:58:42.901577 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:524:in `block in action'
+E, [2025-06-16T22:58:42.901593 #3169] ERROR -- Kitchen: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
+E, [2025-06-16T22:58:42.901605 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:523:in `action'
+E, [2025-06-16T22:58:42.901617 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `perform_action'
+E, [2025-06-16T22:58:42.901629 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:404:in `create_action'
+E, [2025-06-16T22:58:42.901641 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2025-06-16T22:58:42.901655 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2025-06-16T22:58:42.901670 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2025-06-16T22:58:42.901684 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `each'
+E, [2025-06-16T22:58:42.901698 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2025-06-16T22:58:42.901711 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:139:in `converge'
+E, [2025-06-16T22:58:42.901726 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `public_send'
+E, [2025-06-16T22:58:42.901740 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2025-06-16T22:58:42.901752 #3169] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2025-06-16T22:58:42.901761 #3169] ERROR -- Kitchen: ----End Backtrace-----
