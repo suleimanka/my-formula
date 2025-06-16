@@ -36,14 +36,14 @@ platforms:
   - name: 'debian-12-slim'
     driver_config:
       provision_command:
-        - apt-get install -y --no-install-recommends \
+        - apt-get install -y --no-install-recommends
           wget curl tar mc apt-utils apt-transport-https locales
         - localedef --no-archive -c -i en_US -f UTF-8 en_US.UTF-8
 
   - name: 'ubuntu-20.04'
     driver_config:
       provision_command:
-        - apt-get update && apt-get install -y --no-install-recommends \
+        - apt-get update && apt-get install -y --no-install-recommends
           wget curl tar mc apt-utils apt-transport-https locales
         - localedef --no-archive -c -i en_US -f UTF-8 en_US.UTF-8
 
