@@ -21,6 +21,7 @@ terraform:
 * `os` - operating system identifier used in archive names (default: auto-detected Linux).
 * `skip_verify` - pass `skip_verify` option to Salt's `archive.extracted`.
 
+
 ## Usage
 Include the main state in your top file:
 ```yaml
