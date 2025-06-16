@@ -30,3 +30,11 @@ base:
     virc: '/etc/virc'
   mc:
     skin: 'dark'
+
+terraform:
+  url: 'https://releases.hashicorp.com/terraform'
+  versions:
+    - '1.8.5'
+  default: '1.8.5'
+  arch: 'amd64'
+  skip_verify: true
