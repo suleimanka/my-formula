@@ -11,7 +11,7 @@
 "Terraform :: download and extract {{ ver }}":
   archive.extracted:
     - name: /opt/terraform/{{ ver }}
-    - source: {{ terraform.url.rstrip('/') }}/{{ ver }}/terraform_{{ ver }}_{{ terraform.os }}_{{ terraform.arch }}.zip
+    - source: "https://releases.hashicorp.com/terraform/{{ ver }}/terraform_{{ ver }}_{{ terraform.os }}_{{ terraform.arch }}.zip"
     - archive_format: zip
     - if_missing: /opt/terraform/{{ ver }}/terraform
     - skip_verify: {{ terraform.skip_verify }}
