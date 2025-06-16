@@ -1,9 +1,9 @@
 ---
 username: kitchen
 ssh_key: "/home/suleiman/my-formula/.kitchen/docker_id_rsa"
-last_error: Kitchen::ActionFailed
 image_id: sha256:97d398c9fd34ad9115b2a70df7910ae04207659dc56965d8117ef22d186ae157
-container_id: 306cce94f21496ce05b1c6c566d8233e899fa8591ac985041a80c292e141a789
+container_id: ae63e6e3670ca2dfa006c432408aa24e19ed3ead8c37080719ce5c259667ff0e
 hostname: localhost
-port: 32774
+port: 32779
 last_action: create
+last_error: Kitchen::ActionFailed

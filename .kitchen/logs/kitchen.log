@@ -1,153 +1,153 @@
-I, [2025-06-16T23:41:15.888784 #12703]  INFO -- Kitchen: -----> Starting Test Kitchen (v3.7.0)
-I, [2025-06-16T23:41:16.511322 #12703]  INFO -- Kitchen: -----> Creating <terraform-ubuntu-2004>...
-I, [2025-06-16T23:41:16.911021 #12703]  INFO -- Kitchen: #0 building with "default" instance using docker driver
-I, [2025-06-16T23:41:16.911294 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:16.911368 #12703]  INFO -- Kitchen: #1 [internal] load build definition from Dockerfile-kitchen20250616-12703-ltn7uh
-I, [2025-06-16T23:41:16.911441 #12703]  INFO -- Kitchen: #1 transferring dockerfile: 1.78kB done
-I, [2025-06-16T23:41:16.911518 #12703]  INFO -- Kitchen: #1 DONE 0.0s
-I, [2025-06-16T23:41:16.911563 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:16.911605 #12703]  INFO -- Kitchen: #2 [internal] load metadata for docker.io/library/ubuntu:20.04
-I, [2025-06-16T23:41:17.278552 #12703]  INFO -- Kitchen: #2 DONE 0.5s
-I, [2025-06-16T23:41:17.341633 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.341726 #12703]  INFO -- Kitchen: #3 [internal] load .dockerignore
-I, [2025-06-16T23:41:17.341741 #12703]  INFO -- Kitchen: #3 transferring context: 2B done
-I, [2025-06-16T23:41:17.341755 #12703]  INFO -- Kitchen: #3 DONE 0.0s
-I, [2025-06-16T23:41:17.341767 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.345860 #12703]  INFO -- Kitchen: #4 [ 1/19] FROM docker.io/library/ubuntu:20.04@sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
-I, [2025-06-16T23:41:17.346023 #12703]  INFO -- Kitchen: #4 DONE 0.0s
-I, [2025-06-16T23:41:17.346067 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346109 #12703]  INFO -- Kitchen: #5 [ 7/19] RUN chmod 0750 /etc/sudoers.d
-I, [2025-06-16T23:41:17.346127 #12703]  INFO -- Kitchen: #5 CACHED
-I, [2025-06-16T23:41:17.346142 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346158 #12703]  INFO -- Kitchen: #6 [13/19] RUN touch /home/kitchen/.ssh/authorized_keys
-I, [2025-06-16T23:41:17.346172 #12703]  INFO -- Kitchen: #6 CACHED
-I, [2025-06-16T23:41:17.346186 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346198 #12703]  INFO -- Kitchen: #7 [15/19] RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
-I, [2025-06-16T23:41:17.346214 #12703]  INFO -- Kitchen: #7 CACHED
-I, [2025-06-16T23:41:17.346227 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346242 #12703]  INFO -- Kitchen: #8 [10/19] RUN mkdir -p /home/kitchen/.ssh
-I, [2025-06-16T23:41:17.346256 #12703]  INFO -- Kitchen: #8 CACHED
-I, [2025-06-16T23:41:17.346268 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346282 #12703]  INFO -- Kitchen: #9 [ 8/19] RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/kitchen
-I, [2025-06-16T23:41:17.346307 #12703]  INFO -- Kitchen: #9 CACHED
-I, [2025-06-16T23:41:17.346321 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346333 #12703]  INFO -- Kitchen: #10 [14/19] RUN chown kitchen /home/kitchen/.ssh/authorized_keys
-I, [2025-06-16T23:41:17.346343 #12703]  INFO -- Kitchen: #10 CACHED
-I, [2025-06-16T23:41:17.346351 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346360 #12703]  INFO -- Kitchen: #11 [ 2/19] RUN [ ! -f "/sbin/initctl" ] || dpkg-divert --local --rename --add /sbin/initctl                 && ln -sf /bin/true /sbin/initctl
-I, [2025-06-16T23:41:17.346368 #12703]  INFO -- Kitchen: #11 CACHED
-I, [2025-06-16T23:41:17.346376 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346387 #12703]  INFO -- Kitchen: #12 [11/19] RUN chown -R kitchen /home/kitchen/.ssh
-I, [2025-06-16T23:41:17.346395 #12703]  INFO -- Kitchen: #12 CACHED
-I, [2025-06-16T23:41:17.346402 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346410 #12703]  INFO -- Kitchen: #13 [ 3/19] RUN apt-get update
-I, [2025-06-16T23:41:17.346418 #12703]  INFO -- Kitchen: #13 CACHED
-I, [2025-06-16T23:41:17.346426 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346435 #12703]  INFO -- Kitchen: #14 [18/19] RUN localedef --no-archive -c -i en_US -f UTF-8 en_US.UTF-8
-I, [2025-06-16T23:41:17.346449 #12703]  INFO -- Kitchen: #14 CACHED
-I, [2025-06-16T23:41:17.346461 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346474 #12703]  INFO -- Kitchen: #15 [ 5/19] RUN if ! getent passwd kitchen; then                   useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;                 fi
-I, [2025-06-16T23:41:17.346496 #12703]  INFO -- Kitchen: #15 CACHED
-I, [2025-06-16T23:41:17.346507 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346517 #12703]  INFO -- Kitchen: #16 [16/19] RUN mkdir -p /run/sshd
-I, [2025-06-16T23:41:17.346529 #12703]  INFO -- Kitchen: #16 CACHED
-I, [2025-06-16T23:41:17.346543 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346564 #12703]  INFO -- Kitchen: #17 [ 6/19] RUN mkdir -p /etc/sudoers.d
-I, [2025-06-16T23:41:17.346583 #12703]  INFO -- Kitchen: #17 CACHED
-I, [2025-06-16T23:41:17.346638 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346652 #12703]  INFO -- Kitchen: #18 [17/19] RUN apt-get update && apt-get install -y --no-install-recommends wget curl tar mc apt-utils apt-transport-https locales
-I, [2025-06-16T23:41:17.346663 #12703]  INFO -- Kitchen: #18 CACHED
-I, [2025-06-16T23:41:17.346673 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346686 #12703]  INFO -- Kitchen: #19 [ 9/19] RUN echo "Defaults !requiretty" >> /etc/sudoers.d/kitchen
-I, [2025-06-16T23:41:17.346696 #12703]  INFO -- Kitchen: #19 CACHED
-I, [2025-06-16T23:41:17.346705 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346713 #12703]  INFO -- Kitchen: #20 [12/19] RUN chmod 0700 /home/kitchen/.ssh
-I, [2025-06-16T23:41:17.346721 #12703]  INFO -- Kitchen: #20 CACHED
-I, [2025-06-16T23:41:17.346730 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346741 #12703]  INFO -- Kitchen: #21 [ 4/19] RUN apt-get install -y sudo openssh-server curl lsb-release
-I, [2025-06-16T23:41:17.346750 #12703]  INFO -- Kitchen: #21 CACHED
-I, [2025-06-16T23:41:17.346757 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346766 #12703]  INFO -- Kitchen: #22 [19/19] RUN echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyfWm0f8l0tL3tsMnZCwByf6N/xb6mtOpS8169kGE6QDRrypbZc5x7catLNrkyotvFJipFu6JCnZDCI0GBUKOYTWtNdQDm9ydGFn3GGdXEeMVe3nKww5fGm/ffTVR2bn6LtTUqBnB0VY/j4kOMW72X+CHmMCbiiQB7EivUxl2W5v7Ufq+qu0GE4lBfD+RtmwohA82piBZA+hv9AzLTXIpnNDwuiOUgsO84kGyWmiO/BEKBR53v7vVVsRYxPSrJ/1OKNiz20LkRpVsff3R1goFUjp0gouP6jCzHThx8fh/sbtTzWL7FbP3hmxqHUXVIZigUKy6FGPVjF8wjconmBRY1 kitchen_docker_key >> /home/kitchen/.ssh/authorized_keys
-I, [2025-06-16T23:41:17.346784 #12703]  INFO -- Kitchen: #22 CACHED
-I, [2025-06-16T23:41:17.346793 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.346801 #12703]  INFO -- Kitchen: #23 exporting to image
-I, [2025-06-16T23:41:17.346812 #12703]  INFO -- Kitchen: #23 exporting layers done
-I, [2025-06-16T23:41:17.346842 #12703]  INFO -- Kitchen: #23 writing image sha256:97d398c9fd34ad9115b2a70df7910ae04207659dc56965d8117ef22d186ae157 done
-I, [2025-06-16T23:41:17.346851 #12703]  INFO -- Kitchen: #23 DONE 0.0s
-I, [2025-06-16T23:41:17.349862 #12703]  INFO -- Kitchen: 
-I, [2025-06-16T23:41:17.349918 #12703]  INFO -- Kitchen:  [33m2 warnings found (use docker --debug to expand):
-I, [2025-06-16T23:41:17.349929 #12703]  INFO -- Kitchen: [0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 4)
-I, [2025-06-16T23:41:17.349939 #12703]  INFO -- Kitchen:  - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
-I, [2025-06-16T23:41:17.463074 #12703]  INFO -- Kitchen: 306cce94f21496ce05b1c6c566d8233e899fa8591ac985041a80c292e141a789
-I, [2025-06-16T23:41:17.757862 #12703]  INFO -- Kitchen: 0.0.0.0:32774
-I, [2025-06-16T23:41:17.757931 #12703]  INFO -- Kitchen: [::]:32774
-I, [2025-06-16T23:41:17.925277 #12703]  INFO -- Kitchen: -----> Converging <terraform-ubuntu-2004>...
-E, [2025-06-16T23:46:05.667638 #12703] ERROR -- Kitchen: ------Exception-------
-E, [2025-06-16T23:46:05.667692 #12703] ERROR -- Kitchen: Class: Kitchen::ActionFailed
-E, [2025-06-16T23:46:05.667707 #12703] ERROR -- Kitchen: Message: 1 actions failed.
+I, [2025-06-17T00:31:50.311257 #23116]  INFO -- Kitchen: -----> Starting Test Kitchen (v3.7.0)
+I, [2025-06-17T00:31:50.523840 #23116]  INFO -- Kitchen: -----> Creating <terraform-ubuntu-2004>...
+I, [2025-06-17T00:31:50.915267 #23116]  INFO -- Kitchen: #0 building with "default" instance using docker driver
+I, [2025-06-17T00:31:50.915506 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:50.915567 #23116]  INFO -- Kitchen: #1 [internal] load build definition from Dockerfile-kitchen20250617-23116-5ktw2s
+I, [2025-06-17T00:31:50.915612 #23116]  INFO -- Kitchen: #1 transferring dockerfile: 1.78kB done
+I, [2025-06-17T00:31:50.915650 #23116]  INFO -- Kitchen: #1 DONE 0.0s
+I, [2025-06-17T00:31:50.915685 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:50.915721 #23116]  INFO -- Kitchen: #2 [internal] load metadata for docker.io/library/ubuntu:20.04
+I, [2025-06-17T00:31:51.970503 #23116]  INFO -- Kitchen: #2 DONE 1.2s
+I, [2025-06-17T00:31:52.032775 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.032847 #23116]  INFO -- Kitchen: #3 [internal] load .dockerignore
+I, [2025-06-17T00:31:52.032860 #23116]  INFO -- Kitchen: #3 transferring context: 2B done
+I, [2025-06-17T00:31:52.032874 #23116]  INFO -- Kitchen: #3 DONE 0.0s
+I, [2025-06-17T00:31:52.032890 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.032906 #23116]  INFO -- Kitchen: #4 [ 1/19] FROM docker.io/library/ubuntu:20.04@sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
+I, [2025-06-17T00:31:52.032916 #23116]  INFO -- Kitchen: #4 DONE 0.0s
+I, [2025-06-17T00:31:52.032927 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.032943 #23116]  INFO -- Kitchen: #5 [ 4/19] RUN apt-get install -y sudo openssh-server curl lsb-release
+I, [2025-06-17T00:31:52.032951 #23116]  INFO -- Kitchen: #5 CACHED
+I, [2025-06-17T00:31:52.032961 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.032978 #23116]  INFO -- Kitchen: #6 [ 8/19] RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/kitchen
+I, [2025-06-17T00:31:52.032996 #23116]  INFO -- Kitchen: #6 CACHED
+I, [2025-06-17T00:31:52.033008 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.037333 #23116]  INFO -- Kitchen: #7 [16/19] RUN mkdir -p /run/sshd
+I, [2025-06-17T00:31:52.037539 #23116]  INFO -- Kitchen: #7 CACHED
+I, [2025-06-17T00:31:52.037621 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.037646 #23116]  INFO -- Kitchen: #8 [ 3/19] RUN apt-get update
+I, [2025-06-17T00:31:52.037660 #23116]  INFO -- Kitchen: #8 CACHED
+I, [2025-06-17T00:31:52.037674 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.037687 #23116]  INFO -- Kitchen: #9 [11/19] RUN chown -R kitchen /home/kitchen/.ssh
+I, [2025-06-17T00:31:52.037699 #23116]  INFO -- Kitchen: #9 CACHED
+I, [2025-06-17T00:31:52.037712 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.037725 #23116]  INFO -- Kitchen: #10 [ 7/19] RUN chmod 0750 /etc/sudoers.d
+I, [2025-06-17T00:31:52.037739 #23116]  INFO -- Kitchen: #10 CACHED
+I, [2025-06-17T00:31:52.037756 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.037769 #23116]  INFO -- Kitchen: #11 [15/19] RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+I, [2025-06-17T00:31:52.037782 #23116]  INFO -- Kitchen: #11 CACHED
+I, [2025-06-17T00:31:52.037794 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.037806 #23116]  INFO -- Kitchen: #12 [ 9/19] RUN echo "Defaults !requiretty" >> /etc/sudoers.d/kitchen
+I, [2025-06-17T00:31:52.037820 #23116]  INFO -- Kitchen: #12 CACHED
+I, [2025-06-17T00:31:52.037836 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.037849 #23116]  INFO -- Kitchen: #13 [12/19] RUN chmod 0700 /home/kitchen/.ssh
+I, [2025-06-17T00:31:52.037861 #23116]  INFO -- Kitchen: #13 CACHED
+I, [2025-06-17T00:31:52.037873 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.037886 #23116]  INFO -- Kitchen: #14 [14/19] RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+I, [2025-06-17T00:31:52.037907 #23116]  INFO -- Kitchen: #14 CACHED
+I, [2025-06-17T00:31:52.037922 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.037934 #23116]  INFO -- Kitchen: #15 [17/19] RUN apt-get update && apt-get install -y --no-install-recommends wget curl tar mc apt-utils apt-transport-https locales
+I, [2025-06-17T00:31:52.037960 #23116]  INFO -- Kitchen: #15 CACHED
+I, [2025-06-17T00:31:52.037975 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.037993 #23116]  INFO -- Kitchen: #16 [10/19] RUN mkdir -p /home/kitchen/.ssh
+I, [2025-06-17T00:31:52.038009 #23116]  INFO -- Kitchen: #16 CACHED
+I, [2025-06-17T00:31:52.038021 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.038034 #23116]  INFO -- Kitchen: #17 [13/19] RUN touch /home/kitchen/.ssh/authorized_keys
+I, [2025-06-17T00:31:52.039780 #23116]  INFO -- Kitchen: #17 CACHED
+I, [2025-06-17T00:31:52.039838 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.039857 #23116]  INFO -- Kitchen: #18 [18/19] RUN localedef --no-archive -c -i en_US -f UTF-8 en_US.UTF-8
+I, [2025-06-17T00:31:52.039875 #23116]  INFO -- Kitchen: #18 CACHED
+I, [2025-06-17T00:31:52.039894 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.039911 #23116]  INFO -- Kitchen: #19 [ 5/19] RUN if ! getent passwd kitchen; then                   useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;                 fi
+I, [2025-06-17T00:31:52.039921 #23116]  INFO -- Kitchen: #19 CACHED
+I, [2025-06-17T00:31:52.039928 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.039936 #23116]  INFO -- Kitchen: #20 [ 6/19] RUN mkdir -p /etc/sudoers.d
+I, [2025-06-17T00:31:52.039944 #23116]  INFO -- Kitchen: #20 CACHED
+I, [2025-06-17T00:31:52.039952 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.039960 #23116]  INFO -- Kitchen: #21 [ 2/19] RUN [ ! -f "/sbin/initctl" ] || dpkg-divert --local --rename --add /sbin/initctl                 && ln -sf /bin/true /sbin/initctl
+I, [2025-06-17T00:31:52.039968 #23116]  INFO -- Kitchen: #21 CACHED
+I, [2025-06-17T00:31:52.039975 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.039986 #23116]  INFO -- Kitchen: #22 [19/19] RUN echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyfWm0f8l0tL3tsMnZCwByf6N/xb6mtOpS8169kGE6QDRrypbZc5x7catLNrkyotvFJipFu6JCnZDCI0GBUKOYTWtNdQDm9ydGFn3GGdXEeMVe3nKww5fGm/ffTVR2bn6LtTUqBnB0VY/j4kOMW72X+CHmMCbiiQB7EivUxl2W5v7Ufq+qu0GE4lBfD+RtmwohA82piBZA+hv9AzLTXIpnNDwuiOUgsO84kGyWmiO/BEKBR53v7vVVsRYxPSrJ/1OKNiz20LkRpVsff3R1goFUjp0gouP6jCzHThx8fh/sbtTzWL7FbP3hmxqHUXVIZigUKy6FGPVjF8wjconmBRY1 kitchen_docker_key >> /home/kitchen/.ssh/authorized_keys
+I, [2025-06-17T00:31:52.039994 #23116]  INFO -- Kitchen: #22 CACHED
+I, [2025-06-17T00:31:52.040001 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.040012 #23116]  INFO -- Kitchen: #23 exporting to image
+I, [2025-06-17T00:31:52.040020 #23116]  INFO -- Kitchen: #23 exporting layers done
+I, [2025-06-17T00:31:52.040028 #23116]  INFO -- Kitchen: #23 writing image sha256:97d398c9fd34ad9115b2a70df7910ae04207659dc56965d8117ef22d186ae157 done
+I, [2025-06-17T00:31:52.040036 #23116]  INFO -- Kitchen: #23 DONE 0.0s
+I, [2025-06-17T00:31:52.040044 #23116]  INFO -- Kitchen: 
+I, [2025-06-17T00:31:52.040051 #23116]  INFO -- Kitchen:  [33m2 warnings found (use docker --debug to expand):
+I, [2025-06-17T00:31:52.040059 #23116]  INFO -- Kitchen: [0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 4)
+I, [2025-06-17T00:31:52.040067 #23116]  INFO -- Kitchen:  - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+I, [2025-06-17T00:31:52.126027 #23116]  INFO -- Kitchen: ae63e6e3670ca2dfa006c432408aa24e19ed3ead8c37080719ce5c259667ff0e
+I, [2025-06-17T00:31:52.389497 #23116]  INFO -- Kitchen: 0.0.0.0:32779
+I, [2025-06-17T00:31:52.389606 #23116]  INFO -- Kitchen: [::]:32779
+I, [2025-06-17T00:31:52.566877 #23116]  INFO -- Kitchen: -----> Converging <terraform-ubuntu-2004>...
+E, [2025-06-17T00:35:16.696530 #23116] ERROR -- Kitchen: ------Exception-------
+E, [2025-06-17T00:35:16.697590 #23116] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2025-06-17T00:35:16.697640 #23116] ERROR -- Kitchen: Message: 1 actions failed.
 >>>>>>     Converge failed on instance <terraform-ubuntu-2004>.  Please see .kitchen/logs/terraform-ubuntu-2004.log for more details
-E, [2025-06-16T23:46:05.667721 #12703] ERROR -- Kitchen: ----------------------
-E, [2025-06-16T23:46:05.667745 #12703] ERROR -- Kitchen: ------Backtrace-------
-E, [2025-06-16T23:46:05.667756 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:181:in `report_errors'
-E, [2025-06-16T23:46:05.667795 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:172:in `run_action'
-E, [2025-06-16T23:46:05.667810 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command/action.rb:35:in `block in call'
-E, [2025-06-16T23:46:05.667821 #12703] ERROR -- Kitchen: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
-E, [2025-06-16T23:46:05.667830 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command/action.rb:33:in `call'
-E, [2025-06-16T23:46:05.667838 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/cli.rb:52:in `perform'
-E, [2025-06-16T23:46:05.667849 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/cli.rb:198:in `block (2 levels) in <class:CLI>'
-E, [2025-06-16T23:46:05.667860 #12703] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/command.rb:28:in `run'
-E, [2025-06-16T23:46:05.667870 #12703] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/invocation.rb:127:in `invoke_command'
-E, [2025-06-16T23:46:05.667879 #12703] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor.rb:538:in `dispatch'
-E, [2025-06-16T23:46:05.667888 #12703] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/base.rb:584:in `start'
-E, [2025-06-16T23:46:05.667897 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/bin/kitchen:11:in `block in <top (required)>'
-E, [2025-06-16T23:46:05.667905 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/errors.rb:183:in `with_friendly_errors'
-E, [2025-06-16T23:46:05.667915 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/bin/kitchen:11:in `<top (required)>'
-E, [2025-06-16T23:46:05.667924 #12703] ERROR -- Kitchen: /usr/local/bin/kitchen:25:in `load'
-E, [2025-06-16T23:46:05.667932 #12703] ERROR -- Kitchen: /usr/local/bin/kitchen:25:in `<main>'
-E, [2025-06-16T23:46:05.667941 #12703] ERROR -- Kitchen: ----End Backtrace-----
-E, [2025-06-16T23:46:05.667950 #12703] ERROR -- Kitchen: -Composite Exception--
-E, [2025-06-16T23:46:05.667963 #12703] ERROR -- Kitchen: Class: Kitchen::InstanceFailure
-E, [2025-06-16T23:46:05.667978 #12703] ERROR -- Kitchen: Message: Converge failed on instance <terraform-ubuntu-2004>.  Please see .kitchen/logs/terraform-ubuntu-2004.log for more details
-E, [2025-06-16T23:46:05.667992 #12703] ERROR -- Kitchen: ----------------------
-E, [2025-06-16T23:46:05.668000 #12703] ERROR -- Kitchen: ------Backtrace-------
-E, [2025-06-16T23:46:05.668009 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/provisioner/base.rb:99:in `rescue in call'
-E, [2025-06-16T23:46:05.668018 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/provisioner/base.rb:98:in `call'
-E, [2025-06-16T23:46:05.668026 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:419:in `block in converge_action'
-E, [2025-06-16T23:46:05.668035 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:563:in `synchronize_or_call'
-E, [2025-06-16T23:46:05.668044 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:524:in `block in action'
-E, [2025-06-16T23:46:05.668053 #12703] ERROR -- Kitchen: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
-E, [2025-06-16T23:46:05.668061 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:523:in `action'
-E, [2025-06-16T23:46:05.668076 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:414:in `converge_action'
-E, [2025-06-16T23:46:05.668091 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
-E, [2025-06-16T23:46:05.668099 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
-E, [2025-06-16T23:46:05.668108 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:391:in `block in transition_to'
-E, [2025-06-16T23:46:05.668116 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `each'
-E, [2025-06-16T23:46:05.668125 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `transition_to'
-E, [2025-06-16T23:46:05.668133 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:139:in `converge'
-E, [2025-06-16T23:46:05.668142 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `public_send'
-E, [2025-06-16T23:46:05.668150 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
-E, [2025-06-16T23:46:05.668159 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
-E, [2025-06-16T23:46:05.668168 #12703] ERROR -- Kitchen: ----End Backtrace-----
-E, [2025-06-16T23:46:05.668176 #12703] ERROR -- Kitchen: ---Nested Exception---
-E, [2025-06-16T23:46:05.668184 #12703] ERROR -- Kitchen: Class: Kitchen::ActionFailed
-E, [2025-06-16T23:46:05.668192 #12703] ERROR -- Kitchen: Message: SSH exited (2) for command: [sudo -E chmod +x /tmp/kitchen/*.sh;sudo -E /tmp/kitchen/dependencies.sh;sudo -E salt-call --state-output=changes --config-dir=/tmp/kitchen/etc/salt state.highstate --retcode-passthrough]
-E, [2025-06-16T23:46:05.668202 #12703] ERROR -- Kitchen: ----------------------
-E, [2025-06-16T23:46:05.668210 #12703] ERROR -- Kitchen: ------Backtrace-------
-E, [2025-06-16T23:46:05.668218 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/provisioner/base.rb:99:in `rescue in call'
-E, [2025-06-16T23:46:05.668227 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/provisioner/base.rb:98:in `call'
-E, [2025-06-16T23:46:05.668236 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:419:in `block in converge_action'
-E, [2025-06-16T23:46:05.668244 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:563:in `synchronize_or_call'
-E, [2025-06-16T23:46:05.668253 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:524:in `block in action'
-E, [2025-06-16T23:46:05.668261 #12703] ERROR -- Kitchen: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
-E, [2025-06-16T23:46:05.668271 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:523:in `action'
-E, [2025-06-16T23:46:05.668285 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:414:in `converge_action'
-E, [2025-06-16T23:46:05.668296 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
-E, [2025-06-16T23:46:05.668305 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
-E, [2025-06-16T23:46:05.668319 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:391:in `block in transition_to'
-E, [2025-06-16T23:46:05.668328 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `each'
-E, [2025-06-16T23:46:05.668337 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `transition_to'
-E, [2025-06-16T23:46:05.668345 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:139:in `converge'
-E, [2025-06-16T23:46:05.668354 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `public_send'
-E, [2025-06-16T23:46:05.668362 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
-E, [2025-06-16T23:46:05.668370 #12703] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
-E, [2025-06-16T23:46:05.668383 #12703] ERROR -- Kitchen: ----End Backtrace-----
+E, [2025-06-17T00:35:16.697658 #23116] ERROR -- Kitchen: ----------------------
+E, [2025-06-17T00:35:16.697683 #23116] ERROR -- Kitchen: ------Backtrace-------
+E, [2025-06-17T00:35:16.697698 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:181:in `report_errors'
+E, [2025-06-17T00:35:16.697710 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:172:in `run_action'
+E, [2025-06-17T00:35:16.697720 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command/action.rb:35:in `block in call'
+E, [2025-06-17T00:35:16.697730 #23116] ERROR -- Kitchen: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
+E, [2025-06-17T00:35:16.697740 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command/action.rb:33:in `call'
+E, [2025-06-17T00:35:16.697750 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/cli.rb:52:in `perform'
+E, [2025-06-17T00:35:16.697760 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/cli.rb:198:in `block (2 levels) in <class:CLI>'
+E, [2025-06-17T00:35:16.697770 #23116] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/command.rb:28:in `run'
+E, [2025-06-17T00:35:16.697781 #23116] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/invocation.rb:127:in `invoke_command'
+E, [2025-06-17T00:35:16.697791 #23116] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor.rb:538:in `dispatch'
+E, [2025-06-17T00:35:16.697802 #23116] ERROR -- Kitchen: /var/lib/gems/3.2.0/gems/thor-1.3.2/lib/thor/base.rb:584:in `start'
+E, [2025-06-17T00:35:16.697811 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/bin/kitchen:11:in `block in <top (required)>'
+E, [2025-06-17T00:35:16.697822 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/errors.rb:183:in `with_friendly_errors'
+E, [2025-06-17T00:35:16.697832 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/bin/kitchen:11:in `<top (required)>'
+E, [2025-06-17T00:35:16.697843 #23116] ERROR -- Kitchen: /usr/local/bin/kitchen:25:in `load'
+E, [2025-06-17T00:35:16.697853 #23116] ERROR -- Kitchen: /usr/local/bin/kitchen:25:in `<main>'
+E, [2025-06-17T00:35:16.697863 #23116] ERROR -- Kitchen: ----End Backtrace-----
+E, [2025-06-17T00:35:16.697873 #23116] ERROR -- Kitchen: -Composite Exception--
+E, [2025-06-17T00:35:16.697883 #23116] ERROR -- Kitchen: Class: Kitchen::InstanceFailure
+E, [2025-06-17T00:35:16.697894 #23116] ERROR -- Kitchen: Message: Converge failed on instance <terraform-ubuntu-2004>.  Please see .kitchen/logs/terraform-ubuntu-2004.log for more details
+E, [2025-06-17T00:35:16.697912 #23116] ERROR -- Kitchen: ----------------------
+E, [2025-06-17T00:35:16.697931 #23116] ERROR -- Kitchen: ------Backtrace-------
+E, [2025-06-17T00:35:16.697941 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/provisioner/base.rb:99:in `rescue in call'
+E, [2025-06-17T00:35:16.697952 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/provisioner/base.rb:98:in `call'
+E, [2025-06-17T00:35:16.698002 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:419:in `block in converge_action'
+E, [2025-06-17T00:35:16.698025 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:563:in `synchronize_or_call'
+E, [2025-06-17T00:35:16.698044 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:524:in `block in action'
+E, [2025-06-17T00:35:16.698056 #23116] ERROR -- Kitchen: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
+E, [2025-06-17T00:35:16.698066 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:523:in `action'
+E, [2025-06-17T00:35:16.698083 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:414:in `converge_action'
+E, [2025-06-17T00:35:16.698095 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2025-06-17T00:35:16.698106 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2025-06-17T00:35:16.698116 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2025-06-17T00:35:16.698126 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `each'
+E, [2025-06-17T00:35:16.698137 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2025-06-17T00:35:16.698157 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:139:in `converge'
+E, [2025-06-17T00:35:16.698176 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `public_send'
+E, [2025-06-17T00:35:16.698187 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2025-06-17T00:35:16.698198 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2025-06-17T00:35:16.698208 #23116] ERROR -- Kitchen: ----End Backtrace-----
+E, [2025-06-17T00:35:16.698217 #23116] ERROR -- Kitchen: ---Nested Exception---
+E, [2025-06-17T00:35:16.698227 #23116] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2025-06-17T00:35:16.698237 #23116] ERROR -- Kitchen: Message: SSH exited (2) for command: [sudo -E chmod +x /tmp/kitchen/*.sh;sudo -E /tmp/kitchen/dependencies.sh;sudo -E salt-call --state-output=changes --config-dir=/tmp/kitchen/etc/salt state.highstate --retcode-passthrough]
+E, [2025-06-17T00:35:16.698247 #23116] ERROR -- Kitchen: ----------------------
+E, [2025-06-17T00:35:16.698257 #23116] ERROR -- Kitchen: ------Backtrace-------
+E, [2025-06-17T00:35:16.698267 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/provisioner/base.rb:99:in `rescue in call'
+E, [2025-06-17T00:35:16.698277 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/provisioner/base.rb:98:in `call'
+E, [2025-06-17T00:35:16.698287 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:419:in `block in converge_action'
+E, [2025-06-17T00:35:16.698297 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:563:in `synchronize_or_call'
+E, [2025-06-17T00:35:16.698307 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:524:in `block in action'
+E, [2025-06-17T00:35:16.698317 #23116] ERROR -- Kitchen: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
+E, [2025-06-17T00:35:16.698327 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:523:in `action'
+E, [2025-06-17T00:35:16.698337 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:414:in `converge_action'
+E, [2025-06-17T00:35:16.698347 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2025-06-17T00:35:16.698357 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2025-06-17T00:35:16.698373 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2025-06-17T00:35:16.698386 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `each'
+E, [2025-06-17T00:35:16.698399 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2025-06-17T00:35:16.698410 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:139:in `converge'
+E, [2025-06-17T00:35:16.698420 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `public_send'
+E, [2025-06-17T00:35:16.698430 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2025-06-17T00:35:16.698440 #23116] ERROR -- Kitchen: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2025-06-17T00:35:16.698450 #23116] ERROR -- Kitchen: ----End Backtrace-----

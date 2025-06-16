@@ -6,9 +6,9 @@
       'url': 'https://releases.hashicorp.com/terraform',
       'versions': ['1.8.5'],
       'default': '1.8.5',
-      'arch': arch_map.get(grains.get('osarch', grains.get('cpuarch')), grains.get('cpuarch')),
+      'arch': arch_map.get(grains.get('osarch', grains.get('cpuarch')),
+                         grains.get('osarch', grains.get('cpuarch'))),
       'os': 'linux' if grains.get('os_family', '').lower() in ['debian', 'redhat'] else grains.get('os', '').lower(),
       'skip_verify': True,
-      'os': 'linux',
     } %}
 {%- set terraform = salt['pillar.get']('terraform', default=terraform_default, merge=True) %}
