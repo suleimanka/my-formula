@@ -10,14 +10,12 @@ terraform:
     - '1.8.5'
   default: '1.8.5'
   arch: 'amd64'
-  skip_verify: true
 ```
 
 * `url` - base download URL for Terraform archives.
 * `versions` - list of versions to install.
 * `default` - version used for the global `terraform` symlink.
 * `arch` - CPU architecture used in archive name.
-* `skip_verify` - pass `skip_verify` option to Salt's `archive.extracted`.
 
 ## Usage
 Include the main state in your top file:

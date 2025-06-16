@@ -37,4 +37,3 @@ terraform:
     - '1.8.5'
   default: '1.8.5'
   arch: 'amd64'
-  skip_verify: true

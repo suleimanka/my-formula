@@ -14,7 +14,6 @@
     - source: {{ terraform.url }}/{{ ver }}/terraform_{{ ver }}_{{ terraform.os }}_{{ terraform.arch }}.zip
     - archive_format: zip
     - if_missing: /opt/terraform/{{ ver }}/terraform
-    - skip_verify: {{ terraform.skip_verify }}
     - user: root
     - group: root
     - enforce_toplevel: False
