@@ -1,0 +1,4 @@
+---
+username: kitchen
+ssh_key: "/home/suleiman/my-formula/.kitchen/docker_id_rsa"
+last_error: Kitchen::ShellOut::ShellCommandFailed

@@ -1,0 +1,270 @@
+I, [2025-06-16T22:58:32.836604 #3169]  INFO -- terraform-ubuntu-2004: -----> Creating <terraform-ubuntu-2004>...
+E, [2025-06-16T22:58:42.897646 #3169] ERROR -- terraform-ubuntu-2004: Create failed on instance <terraform-ubuntu-2004>.
+E, [2025-06-16T22:58:42.897845 #3169] ERROR -- terraform-ubuntu-2004: ------Exception-------
+E, [2025-06-16T22:58:42.897867 #3169] ERROR -- terraform-ubuntu-2004: Class: Kitchen::ShellOut::ShellCommandFailed
+E, [2025-06-16T22:58:42.897877 #3169] ERROR -- terraform-ubuntu-2004: Message: Expected process to exit with [0], but received '1'
+---- Begin output of docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . ----
+STDOUT: 
+STDERR: #0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile-kitchen20250616-3169-zrvff1
+#1 transferring dockerfile: 1.78kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:20.04
+#2 DONE 1.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/19] FROM docker.io/library/ubuntu:20.04@sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
+#4 DONE 0.0s
+
+#5 [ 7/19] RUN chmod 0750 /etc/sudoers.d
+#5 CACHED
+
+#6 [ 9/19] RUN echo "Defaults !requiretty" >> /etc/sudoers.d/kitchen
+#6 CACHED
+
+#7 [ 8/19] RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/kitchen
+#7 CACHED
+
+#8 [ 5/19] RUN if ! getent passwd kitchen; then                   useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;                 fi
+#8 CACHED
+
+#9 [ 6/19] RUN mkdir -p /etc/sudoers.d
+#9 CACHED
+
+#10 [ 4/19] RUN apt-get install -y sudo openssh-server curl lsb-release
+#10 CACHED
+
+#11 [13/19] RUN touch /home/kitchen/.ssh/authorized_keys
+#11 CACHED
+
+#12 [ 2/19] RUN [ ! -f "/sbin/initctl" ] || dpkg-divert --local --rename --add /sbin/initctl                 && ln -sf /bin/true /sbin/initctl
+#12 CACHED
+
+#13 [14/19] RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+#13 CACHED
+
+#14 [10/19] RUN mkdir -p /home/kitchen/.ssh
+#14 CACHED
+
+#15 [12/19] RUN chmod 0700 /home/kitchen/.ssh
+#15 CACHED
+
+#16 [ 3/19] RUN apt-get update
+#16 CACHED
+
+#17 [15/19] RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+#17 CACHED
+
+#18 [11/19] RUN chown -R kitchen /home/kitchen/.ssh
+#18 CACHED
+
+#19 [16/19] RUN mkdir -p /run/sshd
+#19 CACHED
+
+#20 [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales
+#20 0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+#20 0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+#20 1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+#20 1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+#20 1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+#20 1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+#20 5.428 Fetched 9733 kB in 5s (1993 kB/s)
+#20 5.428 Reading package lists...
+#20 6.777 Reading package lists...
+#20 7.948 Building dependency tree...
+#20 8.195 Reading state information...
+#20 8.253 E: Unable to locate package  wget
+#20 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+------
+ > [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales:
+0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+
+
+
+8.253 E: Unable to locate package  wget
+------
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 4)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+Dockerfile-kitchen20250616-3169-zrvff1:22
+--------------------
+  20 |                 RUN mkdir -p /run/sshd
+  21 |     
+  22 | >>> RUN apt-get update && apt-get install -y --no-install-recommends \ wget curl tar mc apt-utils apt-transport-https locales
+  23 |     RUN localedef --no-archive -c -i en_US -f UTF-8 en_US.UTF-8
+  24 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+---- End output of docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . ----
+Ran docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . returned 1
+E, [2025-06-16T22:58:42.897901 #3169] ERROR -- terraform-ubuntu-2004: ----------------------
+E, [2025-06-16T22:58:42.897909 #3169] ERROR -- terraform-ubuntu-2004: ------Backtrace-------
+E, [2025-06-16T22:58:42.897918 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:57:in `rescue in run_command'
+E, [2025-06-16T22:58:42.897925 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:44:in `run_command'
+E, [2025-06-16T22:58:42.897931 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:38:in `docker_command'
+E, [2025-06-16T22:58:42.897938 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/image_helper.rb:60:in `build_image'
+E, [2025-06-16T22:58:42.897944 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/container/linux.rb:41:in `create'
+E, [2025-06-16T22:58:42.897949 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/driver/docker.rb:125:in `create'
+E, [2025-06-16T22:58:42.897956 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `public_send'
+E, [2025-06-16T22:58:42.897962 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `block in perform_action'
+E, [2025-06-16T22:58:42.897967 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:563:in `synchronize_or_call'
+E, [2025-06-16T22:58:42.897973 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:524:in `block in action'
+E, [2025-06-16T22:58:42.897979 #3169] ERROR -- terraform-ubuntu-2004: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
+E, [2025-06-16T22:58:42.897986 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:523:in `action'
+E, [2025-06-16T22:58:42.897996 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `perform_action'
+E, [2025-06-16T22:58:42.898006 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:404:in `create_action'
+E, [2025-06-16T22:58:42.898012 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2025-06-16T22:58:42.898019 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2025-06-16T22:58:42.898028 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2025-06-16T22:58:42.898037 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `each'
+E, [2025-06-16T22:58:42.898046 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2025-06-16T22:58:42.898053 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:139:in `converge'
+E, [2025-06-16T22:58:42.898059 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `public_send'
+E, [2025-06-16T22:58:42.898065 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2025-06-16T22:58:42.898070 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2025-06-16T22:58:42.898076 #3169] ERROR -- terraform-ubuntu-2004: ----End Backtrace-----
+E, [2025-06-16T22:58:42.898082 #3169] ERROR -- terraform-ubuntu-2004: ---Nested Exception---
+E, [2025-06-16T22:58:42.898087 #3169] ERROR -- terraform-ubuntu-2004: Class: Mixlib::ShellOut::ShellCommandFailed
+E, [2025-06-16T22:58:42.898093 #3169] ERROR -- terraform-ubuntu-2004: Message: Expected process to exit with [0], but received '1'
+---- Begin output of docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . ----
+STDOUT: 
+STDERR: #0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile-kitchen20250616-3169-zrvff1
+#1 transferring dockerfile: 1.78kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/ubuntu:20.04
+#2 DONE 1.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/19] FROM docker.io/library/ubuntu:20.04@sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
+#4 DONE 0.0s
+
+#5 [ 7/19] RUN chmod 0750 /etc/sudoers.d
+#5 CACHED
+
+#6 [ 9/19] RUN echo "Defaults !requiretty" >> /etc/sudoers.d/kitchen
+#6 CACHED
+
+#7 [ 8/19] RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/kitchen
+#7 CACHED
+
+#8 [ 5/19] RUN if ! getent passwd kitchen; then                   useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;                 fi
+#8 CACHED
+
+#9 [ 6/19] RUN mkdir -p /etc/sudoers.d
+#9 CACHED
+
+#10 [ 4/19] RUN apt-get install -y sudo openssh-server curl lsb-release
+#10 CACHED
+
+#11 [13/19] RUN touch /home/kitchen/.ssh/authorized_keys
+#11 CACHED
+
+#12 [ 2/19] RUN [ ! -f "/sbin/initctl" ] || dpkg-divert --local --rename --add /sbin/initctl                 && ln -sf /bin/true /sbin/initctl
+#12 CACHED
+
+#13 [14/19] RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+#13 CACHED
+
+#14 [10/19] RUN mkdir -p /home/kitchen/.ssh
+#14 CACHED
+
+#15 [12/19] RUN chmod 0700 /home/kitchen/.ssh
+#15 CACHED
+
+#16 [ 3/19] RUN apt-get update
+#16 CACHED
+
+#17 [15/19] RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+#17 CACHED
+
+#18 [11/19] RUN chown -R kitchen /home/kitchen/.ssh
+#18 CACHED
+
+#19 [16/19] RUN mkdir -p /run/sshd
+#19 CACHED
+
+#20 [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales
+#20 0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+#20 0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+#20 1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+#20 1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+#20 1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+#20 1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+#20 5.428 Fetched 9733 kB in 5s (1993 kB/s)
+#20 5.428 Reading package lists...
+#20 6.777 Reading package lists...
+#20 7.948 Building dependency tree...
+#20 8.195 Reading state information...
+#20 8.253 E: Unable to locate package  wget
+#20 ERROR: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+------
+ > [17/19] RUN apt-get update && apt-get install -y --no-install-recommends  wget curl tar mc apt-utils apt-transport-https locales:
+0.822 Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [128 kB]
+0.902 Hit:2 http://archive.ubuntu.com/ubuntu focal InRelease
+1.006 Get:3 http://archive.ubuntu.com/ubuntu focal-updates InRelease [128 kB]
+1.541 Get:4 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [4431 kB]
+1.586 Get:5 http://archive.ubuntu.com/ubuntu focal-backports InRelease [128 kB]
+1.813 Get:6 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [4919 kB]
+
+
+
+8.253 E: Unable to locate package  wget
+------
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 4)
+ - LegacyKeyValueFormat: "ENV key=value" should be used instead of legacy "ENV key value" format (line 5)
+Dockerfile-kitchen20250616-3169-zrvff1:22
+--------------------
+  20 |                 RUN mkdir -p /run/sshd
+  21 |     
+  22 | >>> RUN apt-get update && apt-get install -y --no-install-recommends \ wget curl tar mc apt-utils apt-transport-https locales
+  23 |     RUN localedef --no-archive -c -i en_US -f UTF-8 en_US.UTF-8
+  24 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c apt-get update && apt-get install -y --no-install-recommends \\ wget curl tar mc apt-utils apt-transport-https locales" did not complete successfully: exit code: 100
+---- End output of docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . ----
+Ran docker -H unix:///var/run/docker.sock build -f Dockerfile-kitchen20250616-3169-zrvff1 . returned 1
+E, [2025-06-16T22:58:42.898110 #3169] ERROR -- terraform-ubuntu-2004: ----------------------
+E, [2025-06-16T22:58:42.898117 #3169] ERROR -- terraform-ubuntu-2004: ------Backtrace-------
+E, [2025-06-16T22:58:42.898123 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:57:in `rescue in run_command'
+E, [2025-06-16T22:58:42.898129 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:44:in `run_command'
+E, [2025-06-16T22:58:42.898135 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/cli_helper.rb:38:in `docker_command'
+E, [2025-06-16T22:58:42.898143 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/helpers/image_helper.rb:60:in `build_image'
+E, [2025-06-16T22:58:42.898149 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/docker/container/linux.rb:41:in `create'
+E, [2025-06-16T22:58:42.898155 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/kitchen-docker-3.0.0/lib/kitchen/driver/docker.rb:125:in `create'
+E, [2025-06-16T22:58:42.898161 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `public_send'
+E, [2025-06-16T22:58:42.898167 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `block in perform_action'
+E, [2025-06-16T22:58:42.898173 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:563:in `synchronize_or_call'
+E, [2025-06-16T22:58:42.898182 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:524:in `block in action'
+E, [2025-06-16T22:58:42.898190 #3169] ERROR -- terraform-ubuntu-2004: /usr/lib/ruby/3.2.0/benchmark.rb:296:in `measure'
+E, [2025-06-16T22:58:42.898196 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:523:in `action'
+E, [2025-06-16T22:58:42.898202 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:495:in `perform_action'
+E, [2025-06-16T22:58:42.898208 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:404:in `create_action'
+E, [2025-06-16T22:58:42.898218 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2025-06-16T22:58:42.898227 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2025-06-16T22:58:42.898236 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2025-06-16T22:58:42.898244 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `each'
+E, [2025-06-16T22:58:42.898250 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2025-06-16T22:58:42.898256 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/instance.rb:139:in `converge'
+E, [2025-06-16T22:58:42.898262 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `public_send'
+E, [2025-06-16T22:58:42.898268 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2025-06-16T22:58:42.898279 #3169] ERROR -- terraform-ubuntu-2004: /home/suleiman/.local/share/gem/ruby/3.2.0/gems/test-kitchen-3.7.0/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2025-06-16T22:58:42.898284 #3169] ERROR -- terraform-ubuntu-2004: ----End Backtrace-----
