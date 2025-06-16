@@ -12,3 +12,6 @@
       'skip_verify': True,
     } %}
 {%- set terraform = salt['pillar.get']('terraform', default=terraform_default, merge=True) %}
+{%- if not terraform.url.startswith('http') %}
+{%-   set _ = terraform.update({'url': 'https://' ~ terraform.url.lstrip('/')}) %}
+{%- endif %}

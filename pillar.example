@@ -1,36 +1,3 @@
-base:
-  packages:
-    any:
-      - less
-      - mc
-      - unzip
-      - acl
-      - telnet
-      - tcpdump
-      - wget
-      - rsync
-    custom:
-      - some_package_name
-  sysctl:
-    vm.swappiness: '1'
-    net.ipv4.tcp_syncookies: '1'
-    net.ipv4.tcp_fin_timeout: '60'
-    net.ipv4.conf.all.rp_filter: '1'
-    net.ipv4.conf.all.log_martians: '1'
-    net.ipv4.conf.all.secure_redirects: '0'
-    net.ipv4.conf.all.accept_source_route: '0'
-    net.ipv4.icmp_echo_ignore_broadcasts: '1'
-  shell:
-    timeout: '600'
-  aliases:
-    commands:
-      mc: "alias mc='EDITOR=vi VIEWER=less mc'"
-  vim:
-    vimrc: '/etc/vimrc'
-    virc: '/etc/virc'
-  mc:
-    skin: 'dark'
-
 terraform:
   url: 'https://releases.hashicorp.com/terraform'
   versions:
