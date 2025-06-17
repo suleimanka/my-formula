@@ -1,5 +1,5 @@
 terraform:
-  url: 'https://releases.hashicorp.com/terraform'
+  url: 'https://hashicorp-releases.yandexcloud.net/terraform'
   versions:
     - '1.8.5'
   default: '1.8.5'

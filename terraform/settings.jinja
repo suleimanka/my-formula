@@ -3,7 +3,7 @@
       'aarch64': 'arm64',
     } %}
 {%- set terraform_default = {
-      'url': 'https://releases.hashicorp.com/terraform',
+      'url': 'https://hashicorp-releases.yandexcloud.net/terraform',
       'versions': ['1.8.5'],
       'default': '1.8.5',
       'arch': arch_map.get(grains.get('osarch', grains.get('cpuarch')),
